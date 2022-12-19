@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "source": "/Users/kylerummens/Documents/portfolio/kylerummens",
+    "source": "./",
     "ignore": [
       "firebase.json",
       "**/.*",
