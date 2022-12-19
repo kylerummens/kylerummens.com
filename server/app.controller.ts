@@ -1,6 +1,5 @@
 import { Controller, Get, NotFoundException, Param, Query, Res } from '@nestjs/common';
 import { Response } from 'express';
-import puppeteer from 'puppeteer';
 import { SupabaseService } from './supabase.service';
 
 @Controller()
@@ -40,6 +39,7 @@ export class AppController {
             })
     }
 
+    /*
     @Get('images/blog-post/:post_id')
     async generateBlogPostImage(
         @Res() res: Response,
@@ -85,4 +85,5 @@ export class AppController {
         res.writeHead(200, { 'Content-Type': 'image/png' });
         res.end(buffer, 'binary');
     }
+    */
 }
