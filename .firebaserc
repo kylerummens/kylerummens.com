@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kylerummens-ae793": {
+      "hosting": {
+        "kylerummens": [
+          "kylerummens-ae793"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kylerummens-ae793"
+  }
+}

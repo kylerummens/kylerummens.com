@@ -1,0 +1,11 @@
+<ng-container *ngIf="!loading; else showLoading">
+    <ng-container *ngIf="!error; else showError">
+        <ng-container *ngIf="post; else showNoPost">
+            <div>{{ post | json }}</div>
+        </ng-container>
+        <ng-template #showNoPost>Post not found</ng-template>
+    </ng-container>
+    <ng-template #showError>Error</ng-template>
+</ng-container>
+
+<ng-template #showLoading>Loading...</ng-template>
