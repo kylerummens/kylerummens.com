@@ -1,10 +1,10 @@
 <ng-container *ngIf="getPagePosts() as posts; else showLoadingPage">
-   <ng-container *ngIf="posts.length; else showNoPosts">
-    <a *ngFor="let post of posts" [routerLink]="post.id">
-        <div class="card">{{ post.title }}</div>
-    </a>
-   </ng-container>
-   <ng-template #showNoPosts>No posts</ng-template>
+    <ng-container *ngIf="posts.length; else showNoPosts">
+        <a *ngFor="let post of posts" [routerLink]="post.idd">
+            <div class="card">{{ post.title }}</div>
+        </a>
+    </ng-container>
+    <ng-template #showNoPosts>No posts</ng-template>
 </ng-container>
 
 <ng-template #showLoadingPage>Loading...</ng-template>

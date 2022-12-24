@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogPost, BlogService } from 'src/app/services/blog.service';
 import { SeoService } from 'src/app/services/seo.service';
@@ -6,7 +6,8 @@ import { SeoService } from 'src/app/services/seo.service';
 @Component({
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
-  styleUrls: ['./blog-post.component.scss']
+  styleUrls: ['./blog-post.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BlogPostComponent implements OnInit {
 
@@ -15,9 +16,11 @@ export class BlogPostComponent implements OnInit {
   post?: BlogPost | null;
   error = false;
 
+  article_loaded = false;
+
   constructor(
     private seoService: SeoService,
-    private blogService: BlogService,
+    public blogService: BlogService,
     private activatedRoute: ActivatedRoute) { }
 
   private loadPost() {
@@ -27,12 +30,16 @@ export class BlogPostComponent implements OnInit {
     this.blogService.getPost(this.post_id)
       .then(post => {
         this.post = post;
-        if(post) {
+        if (post) {
           this.seoService.updateMetadata({
             title: post.title,
             description: post.description,
             image: 'https://broadbandhub.us/assets/images/logos/logo-landscape-light-theme.svg'
-          })
+          });
+
+          setTimeout(() => {
+            this.article_loaded = true;
+          }, 300)
         }
       })
       .catch(() => {
@@ -46,7 +53,7 @@ export class BlogPostComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       const post_id = params['post_id'];
-      if(post_id !== this.post_id) {
+      if (post_id !== this.post_id) {
         this.post_id = params['post_id'];
         this.loadPost();
       }

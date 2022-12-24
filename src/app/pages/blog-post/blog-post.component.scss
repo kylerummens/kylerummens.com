@@ -1,0 +1,7 @@
+main {
+    @apply translate-y-2 opacity-0 transition-all duration-300 ease-out;
+
+    &.article-loaded {
+        @apply translate-y-0 opacity-100;
+    }
+}

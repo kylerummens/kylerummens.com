@@ -1,5 +1,4 @@
-import { Controller, Get, NotFoundException, Param, Query, Res } from '@nestjs/common';
-import { Response } from 'express';
+import { Controller, Get, InternalServerErrorException, Param, Query } from '@nestjs/common';
 import { SupabaseService } from './supabase.service';
 
 @Controller()
@@ -31,10 +30,13 @@ export class AppController {
     handleGetBlogPost(@Param('post_id') post_id: string) {
         return this.supabase.client
             .from('blog_posts')
-            .select('*')
-            .match({ id: post_id})
-            .throwOnError()
+            .select('*, author:blog_authors(id, name, photo_url, title)')
+            .match({ idd: post_id })
+            .maybeSingle()
             .then(res => {
+                if (res.error) {
+                    throw new InternalServerErrorException(res.error);
+                }
                 return res.data ?? null;
             })
     }

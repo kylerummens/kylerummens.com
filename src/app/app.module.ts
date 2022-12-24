@@ -28,9 +28,11 @@ import { UniversalInterceptorService } from './interceptors/universal.intercepto
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    TransferHttpCacheModule,
+    TransferHttpCacheModule
   ],
-  providers: [UniversalInterceptorService],
+  providers: [
+    UniversalInterceptorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

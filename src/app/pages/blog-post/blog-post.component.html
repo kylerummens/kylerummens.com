@@ -1,11 +1,31 @@
 <ng-container *ngIf="!loading; else showLoading">
     <ng-container *ngIf="!error; else showError">
         <ng-container *ngIf="post; else showNoPost">
-            <div>{{ post | json }}</div>
+            <main [class.article-loaded]="article_loaded">
+                <article
+                    class="pt-28 pb-24 prose prose-slate max-w-none dark:prose-invert prose-headings:text-slate-700 prose-a:text-blue-500">
+                    <header class="not-prose mb-24">
+                        <time class="date secondary-label" [dateTime]="post.published_at">{{ post.published_at |
+                            date:'MM.dd.yy' }}</time>
+                        <h1 class="text-3xl sm:text-6xl mb-3">{{ post.title }}</h1>
+                        <h2 class="text-xl sm:text-2xl font-light mb-6">{{ post.description }}</h2>
+
+                        <address class="flex items-center gap-2">
+                            <img [src]="post.author.photo_url" class="h-12 w-12 rounded-full">
+                            <div>
+                                <div class="font-medium not-italic">{{ post.author.name }}</div>
+                                <div class="font-light secondary-label leading-4">{{ post.author.title }}</div>
+                            </div>
+                        </address>
+                    </header>
+
+                    <p [innerHTML]="blogService.markdownToHtml(post.content)"></p>
+                </article>
+            </main>
         </ng-container>
         <ng-template #showNoPost>Post not found</ng-template>
     </ng-container>
     <ng-template #showError>Error</ng-template>
 </ng-container>
 
-<ng-template #showLoading>Loading...</ng-template>
+<ng-template #showLoading></ng-template>
