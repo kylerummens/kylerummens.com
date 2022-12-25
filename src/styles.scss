@@ -5,7 +5,11 @@
 
 @layer components {
   .card {
-    @apply p-4 rounded-lg border border-slate-200 dark:border-slate-700;
+    @apply p-6 rounded-3xl shadow transition-all cursor-pointer;
+  }
+
+  .logo-box {
+    @apply rounded-lg p-2 h-10 w-10 mb-2 overflow-hidden flex items-center justify-center;
   }
 }
 
