@@ -49,6 +49,11 @@ export class AppController {
         return this.githubService.getContributions();
     }
 
+    @Get('github/code-projects')
+    handleGetGithubFileContents(@Query('projects') projects: string) {
+        return this.githubService.getCodeProjects(JSON.parse(projects));
+    }
+
     /*
     @Get('images/blog-post/:post_id')
     async generateBlogPostImage(

@@ -1,3 +1,4 @@
+<!-- My Links -->
 <div class="mb-20">
     <div class="text-xl font-medium label m-6">My links</div>
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 grid-rows-2 gap-5 lg:gap-10">
@@ -57,6 +58,7 @@
     </div>
 </div>
 
+<!-- Blog Posts -->
 <div class="mb-20">
     <div class="text-xl font-medium label m-6">Blog posts</div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-5 lg:gap-10">
@@ -73,13 +75,16 @@
     </div>
 </div>
 
+<!-- Code Projects -->
+
 <div class="mb-20">
-    <div class="text-xl font-medium label m-6">My links</div>
-    <div class="grid grid-cols-4 grid-rows-2 gap-10">
-        <div class="h-40 w-full card"></div>
-        <div class="h-40 w-full card"></div>
-        <div class="col-span-2 row-span-2 h-full w-full card"></div>
-        <div class="h-40 w-full card"></div>
-        <div class="h-40 w-full card"></div>
+    <div class="text-xl font-medium label m-6">Code projects</div>
+    <div class="grid grid-cols-1 gap-10">
+        <div *ngFor="let project of code_projects">
+            <!--<pre><code [highlight]="project.content"></code></pre>-->
+            <pre class="line-numbers">
+<code [highlight]="project.content" [language]="project.language"></code>
+                </pre>
+        </div>
     </div>
 </div>

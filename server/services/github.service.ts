@@ -8,6 +8,7 @@ export class GithubService {
 
     private readonly GITHUB_USERNAME = 'kylerummens';
     private readonly GITHUB_ENDPOINT = 'https://github.com';
+    private readonly GITHUB_RAW_ENDPOINT = 'https://raw.githubusercontent.com';
 
     constructor(private httpClient: HttpService) { }
 
@@ -30,6 +31,20 @@ export class GithubService {
                 })
 
                 return contributions;
+            })
+    }
+
+    getCodeProjects(projects: any[]) {
+        return Promise.all(projects.map(project => {
+            return this.getFileContents(project);
+        }))
+    }
+
+    private getFileContents(project: any) {
+        const endpoint = `${this.GITHUB_RAW_ENDPOINT}/${this.GITHUB_USERNAME}/${project.url}`;
+        return firstValueFrom(this.httpClient.get(endpoint))
+            .then(res => {
+                return { ...project, content: res.data }
             })
     }
 
