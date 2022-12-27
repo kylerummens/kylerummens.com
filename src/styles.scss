@@ -8,15 +8,50 @@
     @apply p-6 rounded-3xl shadow transition-all cursor-pointer;
   }
 
+  .outlined-button {
+    @apply 
+      border 
+      focus:ring-2 
+      text-gray-700 
+      border-slate-200 
+      hover:border-slate-300
+      shadow-sm 
+      focus:ring-gray-500/40 
+      dark:text-gray-300 
+      dark:border-slate-700
+      dark:hover:border-slate-600
+      h-9
+      font-semibold 
+      px-3.5
+      text-sm
+      rounded-md
+      w-auto
+      inline-flex 
+      items-center 
+      justify-center 
+      relative
+      gap-1
+      cursor-pointer
+      outline-none
+      select-none
+      whitespace-nowrap;
+  }
+
   .logo-box {
     @apply rounded-lg p-2 h-10 w-10 mb-2 overflow-hidden flex items-center justify-center;
+  }
+
+  .github-graph-day {
+    height:11px;
+    width:11px;
+    @apply border border-github-graph-outline dark:border-github-graph-night-outline rounded-sm;
   }
 }
 
 @layer utilities {
 
   .label {
-    @apply text-slate-700 dark:text-gray-200;
+    @apply text-slate-700 dark:text-gray-100;
   }
 
   .secondary-label {
@@ -47,7 +82,7 @@ html, body {
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *)):not(pre code) {
-    @apply bg-gray-200 rounded;
+    @apply bg-gray-200 dark:bg-gray-700 rounded;
     overflow-x: auto;
     font-weight: 400;
     font-size: 0.875em;

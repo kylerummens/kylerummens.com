@@ -1,10 +1,13 @@
-import { Controller, Get, InternalServerErrorException, Param, Query } from '@nestjs/common';
-import { SupabaseService } from './supabase.service';
+import { Controller, Get, Header, InternalServerErrorException, Param, Query } from '@nestjs/common';
+import { GithubService } from './services/github.service';
+import { SupabaseService } from './services/supabase.service';
 
 @Controller()
 export class AppController {
 
-    constructor(private supabase: SupabaseService) { }
+    constructor(
+        private githubService: GithubService,
+        private supabase: SupabaseService) { }
 
     @Get()
     handleRoot() {
@@ -13,7 +16,7 @@ export class AppController {
 
     @Get('blog-posts')
     handleGetBlogPosts(@Query('page') page: number = 0) {
-        const PAGE_SIZE = 20;
+        const PAGE_SIZE = 10;
 
         return this.supabase.client
             .from('blog_posts')
@@ -39,6 +42,11 @@ export class AppController {
                 }
                 return res.data ?? null;
             })
+    }
+
+    @Get('github/contributions')
+    handleGetGithubContributions() {
+        return this.githubService.getContributions();
     }
 
     /*

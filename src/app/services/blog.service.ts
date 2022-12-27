@@ -37,7 +37,7 @@ export class BlogService {
     private sanitizer: DomSanitizer,
     private httpClient: HttpClient) { }
 
-  getPosts(page: number): Promise<BlogPost[]> {
+  getPosts(page: number = 0): Promise<BlogPost[]> {
     return firstValueFrom(this.httpClient.get<BlogPost[]>('/api/blog-posts'));
   }
 
