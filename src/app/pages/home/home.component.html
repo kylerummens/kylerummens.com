@@ -59,7 +59,7 @@
 
 <div class="mb-20">
     <div class="text-xl font-medium label m-6">Blog posts</div>
-    <div class="grid grid-cols-2 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-5 lg:gap-10">
         <a *ngFor="let post of blog_posts" [routerLink]="['/blog', post.idd]"
             class="card hover:bg-slate-50 dark:bg-slate-50/5 dark:hover:bg-slate-50/10">
             <div class="mb-2">
