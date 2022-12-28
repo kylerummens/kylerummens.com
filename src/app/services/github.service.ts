@@ -10,17 +10,6 @@ export interface GithubContribution {
 
 export type GithubContributions = GithubContribution[][];
 
-export interface IGithubCodeProject {
-    name: string;
-    file_name: string;
-    url: string;
-    language: string;
-}
-
-export interface GithubCodeProject extends IGithubCodeProject {
-    content: string;
-}
-
 @Injectable({
     providedIn: 'root'
 })
@@ -30,14 +19,6 @@ export class GithubService {
 
     getContributions() {
         return firstValueFrom(this.httpClient.get<GithubContributions>('/api/github/contributions'));
-    }
-
-    getCodeProjects(code_projects: IGithubCodeProject[]) {
-
-        const params = new HttpParams()
-            .set('projects', JSON.stringify(code_projects));
-
-        return firstValueFrom(this.httpClient.get<GithubCodeProject[]>('/api/github/code-projects', { params }));
     }
 
 }

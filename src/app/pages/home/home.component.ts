@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost, BlogService } from 'src/app/services/blog.service';
-import { GithubCodeProject, GithubContributions, GithubService, IGithubCodeProject } from 'src/app/services/github.service';
+import { GithubContributions, GithubService } from 'src/app/services/github.service';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +11,6 @@ export class HomeComponent implements OnInit {
 
   blog_posts?: BlogPost[];
   contributions?: GithubContributions;
-  code_projects?: GithubCodeProject[];
-
-  private _code_projects: IGithubCodeProject[] = [
-    { name: 'angular-supabase-auth', url: 'angular-supabase-auth/main/src/app/services/auth.service.ts', file_name: 'auth.service.ts', language: 'typescript' },
-    { name: 'kylerummens.com', url: 'kylerummens.com/main/server/services/github.service.ts', file_name: ' github.service.ts', language: 'javascript' },
-    { name: 'angular-supabase-auth', url: 'angular-supabase-auth/main/src/app/guards/profile.guard.ts', file_name: 'profile.guard.ts', language: 'javascript' },
-  ]
 
   constructor(
     private blogService: BlogService,
@@ -56,16 +49,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  private initGithubCodeProjects() {
-    this.githubService.getCodeProjects(this._code_projects).then(code_projects => {
-      this.code_projects = code_projects;
-    })
-  }
-
   ngOnInit(): void {
     this.initGithubContributions();
     this.initBlogPosts();
-    this.initGithubCodeProjects();
   }
 
 }
