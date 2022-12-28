@@ -13,6 +13,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UniversalInterceptorService } from './interceptors/universal.interceptor';
+import { PrismDirective } from './directives/prism.directive';
+
+import 'prismjs/components/prism-typescript';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 
 @NgModule({
   declarations: [
@@ -22,13 +26,14 @@ import { UniversalInterceptorService } from './interceptors/universal.intercepto
     CodeComponent,
     HobbiesComponent,
     ContactComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    PrismDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    TransferHttpCacheModule
+    TransferHttpCacheModule,
   ],
   providers: [
     UniversalInterceptorService
