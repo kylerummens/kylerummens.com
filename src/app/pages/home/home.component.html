@@ -74,17 +74,3 @@
         </a>
     </div>
 </div>
-
-<!-- Code Projects -->
-
-<div class="mb-20">
-    <div class="text-xl font-medium label m-6">Code projects</div>
-    <div class="grid grid-cols-1 gap-10">
-        <div *ngFor="let project of code_projects">
-            <!--<pre><code [highlight]="project.content"></code></pre>-->
-            <pre style="max-height:400px">
-<code [highlight]="project.content" [language]="project.language"></code>
-                </pre>
-        </div>
-    </div>
-</div>
