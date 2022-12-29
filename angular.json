@@ -28,10 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/prismjs/themes/prism.css",
-              "node_modules/prismjs/themes/prism-okaidia.min.css",
-              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.css"
+              "src/styles.scss"
             ]
           },
           "configurations": {

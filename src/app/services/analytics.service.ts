@@ -42,6 +42,6 @@ export class AnalyticsService {
 
   private logNavigation() {
     const body = this.generateAnalyticsData();
-    navigator.sendBeacon('/api/analytics/event', JSON.stringify(body));
+    navigator.sendBeacon('https://kylerummens.com/api/analytics/event', JSON.stringify(body));
   }
 }
