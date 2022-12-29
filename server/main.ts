@@ -1,5 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import * as session from 'express-session';
+import { randomUUID } from 'crypto';
+import { mw } from 'request-ip';
 
 async function bootstrap() {
 
@@ -7,6 +10,14 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
+
+  app.use(mw());
+  app.use(session({
+    secret: '1xRtGF1q0Y',
+    resave: true,
+    saveUninitialized: true,
+    genid: () => randomUUID()
+  }));
 
   await app.listen(PORT).then(() => {
     console.log('App listening on port ' + PORT);

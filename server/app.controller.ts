@@ -1,4 +1,6 @@
-import { Controller, Get, Header, InternalServerErrorException, Param, Query } from '@nestjs/common';
+import { Controller, Get, HttpCode, InternalServerErrorException, Param, Post, Query, Req } from '@nestjs/common';
+import { Request } from 'express';
+import * as rawbody from 'raw-body';
 import { GithubService } from './services/github.service';
 import { SupabaseService } from './services/supabase.service';
 
@@ -47,6 +49,26 @@ export class AppController {
     @Get('github/contributions')
     handleGetGithubContributions() {
         return this.githubService.getContributions();
+    }
+
+    @Post('analytics/event')
+    @HttpCode(204)
+    async handleAnalyticsEvent(@Req() request: Request) {
+
+        if (request.readable) {
+            const raw = await rawbody(request);
+            const text = raw.toString().trim();
+            const body = JSON.parse(text);
+
+            const session_id = request.sessionID;
+            const ip_address = request.clientIp;
+
+
+            const data = { ...body, session_id, ip_address };
+
+            const { data: _, error } = await this.supabase.client.from('page_views').insert(data);
+
+        }
     }
 
 }
