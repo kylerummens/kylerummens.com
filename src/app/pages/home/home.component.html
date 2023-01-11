@@ -74,3 +74,22 @@
         </a>
     </div>
 </div>
+
+<!-- Code -->
+<div class="mb-20">
+    <div class="text-xl font-medium label m-6">Code</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-5 lg:gap-10">
+        <a *ngFor="let code_link of code_links" [href]="code_link.link" target="_blank"
+            class="card hover:bg-slate-50 dark:bg-slate-50/5 dark:hover:bg-slate-50/10">
+
+            <div class="mb-5">
+                <img [src]="getCodeLinkImage(code_link.link)" style="max-height:40px">
+            </div>
+
+            <h1 class="label">{{ code_link.title }}</h1>
+            <h2 class="text-sm font-light secondary-label line-clamp-2">
+                {{
+                code_link.description }}</h2>
+        </a>
+    </div>
+</div>

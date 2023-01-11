@@ -12,7 +12,7 @@
     "build:ssr": "ng build && ng run kylerummens:server",
     "prerender": "ng run kylerummens:prerender",
     "prebuild:ssr": "ngcc",
-    "deploy": "gcloud run deploy personal-website --source . --region us-west1",
+    "deploy": "gcloud run deploy personal-website --source . --region us-west1 --to-latest",
     "postinstall": "ngcc"
   },
   "private": true,
@@ -53,6 +53,7 @@
     "@angular/cli": "~14.2.10",
     "@angular/compiler-cli": "^14.2.0",
     "@nguniversal/builders": "^14.0.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "@types/express": "^4.17.0",
     "@types/express-session": "^1.17.5",
