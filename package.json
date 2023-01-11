@@ -12,7 +12,7 @@
     "build:ssr": "ng build && ng run kylerummens:server",
     "prerender": "ng run kylerummens:prerender",
     "prebuild:ssr": "ngcc",
-    "deploy": "gcloud run deploy personal-website --source . --region us-west1 --to-latest",
+    "deploy": "gcloud run deploy personal-website --source . --region us-west1",
     "postinstall": "ngcc"
   },
   "private": true,

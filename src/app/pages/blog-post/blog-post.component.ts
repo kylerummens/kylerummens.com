@@ -34,7 +34,7 @@ export class BlogPostComponent implements OnInit {
           this.seoService.updateMetadata({
             title: post.title,
             description: post.description,
-            image: 'https://broadbandhub.us/assets/images/logos/logo-landscape-light-theme.svg'
+            image: `https://vbwgwexedzhcxpxxnhey.supabase.co/storage/v1/object/public/blog-post-thumbnails/${post.idd}.png`
           });
 
           setTimeout(() => {
