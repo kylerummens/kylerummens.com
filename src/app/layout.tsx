@@ -2,6 +2,7 @@ import Image from 'next/image'
 import '../styles/globals.scss';
 import profile_image from '../../public/profile.webp';
 import { Roboto, Roboto_Mono } from '@next/font/google';
+import { AnalyticsWrapper } from '@/components/analytics';
 
 const roboto = Roboto({
   variable: '--font-roboto',
@@ -45,6 +46,8 @@ export default function RootLayout({
               </div>
           </div>
       </div>
+
+      <AnalyticsWrapper />
 
       </body>
     </html>
