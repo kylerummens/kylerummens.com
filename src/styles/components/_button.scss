@@ -1,0 +1,108 @@
+.btn {
+
+    /* BASE */
+    @apply rounded-full font-medium text-sm outline-none flex items-center gap-1 select-none whitespace-nowrap;
+
+    /* FOCUS */
+    &:focus:not(.btn-outlined):not(.btn-text) {
+        @apply focus:ring-2 focus:ring-blue-500/40 focus:ring-offset-2;
+    }
+
+
+
+    /* COLORS */
+    &.btn-primary {
+        --btn-color: 59, 130, 246;
+    }
+    &.btn-secondary:not(.btn-text) {
+        --btn-color: 30, 41, 59;
+    }
+    &.btn-secondary.btn-text {
+        --btn-color: 100, 116, 139;
+    }
+    &.btn-warn {
+        --btn-color: 239, 68, 68;
+    }
+    // Default color
+    &:not(.btn-primary):not(.btn-secondary):not(.btn-warn) {
+        // Defaults to primary
+        --btn-color: 59, 130, 246;
+    }
+
+
+    /* VARIANTS */
+    &.btn-solid {
+        background-color: rgb(var(--btn-color));
+        @apply text-white;
+
+        &:hover {
+            background-color: rgba(var(--btn-color), .9);
+        }
+    }
+
+    &.btn-soft {
+        background-color: rgba(var(--btn-color), .1);
+        color: rgb(var(--btn-color));
+
+        &:hover {
+            background-color: rgba(var(--btn-color), .2);
+        }
+    }
+
+    &.btn-outlined {
+        @apply border border-gray-200 shadow-sm transition-shadow hover:border-gray-300 focus:border-gray-300;
+    }
+
+    &.btn-text {
+        padding: initial !important;
+        font-size:inherit !important;
+        font-weight: inherit !important;
+        display: inline-flex !important;
+        align-items: center;
+        color: rgb(var(--btn-color));
+        @apply underline;
+    }
+
+    &.btn-plain {
+        color: rgb(var(--btn-color));
+        &:hover {
+            background-color: rgba(var(--btn-color), .1);
+        }
+    }
+
+
+
+    /* SIZES */
+    &.btn-xs {
+        @apply py-0.5 px-3;
+    }
+
+    &.btn-sm {
+        @apply py-1 px-3;
+    }
+
+    &.btn-base {
+        @apply py-1.5 px-4;
+    }
+
+    &.btn-lg {
+        @apply py-2 px-4;
+    }
+
+    &.btn-xl {
+        @apply py-3 px-5;
+    }
+
+
+    /* DEFAULT VARIANT */
+    &:not(.btn-solid):not(.btn-soft):not(.btn-outlined):not(.btn-text):not(.btn-plain) {
+        @extend .btn-plain;
+    }
+
+
+    /* DEFAULT SIZE */
+    &:not(.btn-xs):not(.btn-sm):not(.btn-base):not(.btn-lg):not(.btn-xl) {
+        @extend .btn-base;
+    }
+
+}
