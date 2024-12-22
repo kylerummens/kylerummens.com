@@ -20,13 +20,23 @@ const jobs: Job[] = [
     positions: [
       {
         title: "Full-Stack Software Engineer - Team Lead",
-        responsibilities: ["Todo"],
+        responsibilities: [
+          "TODO: Evaluated the different technologies available to determine the best fit for the pdk.io web application (next.js, tailwind, shadcn/ui, etc.)",
+          "TODO: Work directly with Product to define the user experience for the pdk.io web application",
+          "TODO: Manage a team of developers, including training developers on the Next.js framework, writing tickets, and reviewing pull requests",
+          "TODO: Prep the new product for production and setting up CI/CD pipelines for auto deployments to the various enviornments",
+        ],
         startDate: "May 2024",
         endDate: "Present",
       },
       {
         title: "Full-Stack Software Engineer",
-        responsibilities: ["Todo"],
+        responsibilities: [
+          "TODO: Stripe integration",
+          "TODO: Static IP scripts for managing in-field device connections",
+          "TODO: Maintain customer-facing and internal Node.js Express APIs",
+          "TODO: Maintain the company's main software product, an Angular.js/React web application",
+        ],
         startDate: "July 2023",
         endDate: "May 2024",
       },
@@ -96,7 +106,7 @@ export function WorkSection() {
 
 function Job({ job }: { job: Job }) {
   return (
-    <div className="grid grid-cols-3 gap-4 py-4">
+    <div className="flex flex-col md:grid md:grid-cols-3 gap-4 py-4">
       <div>
         <h3 className="text-base font-medium">{job.company}</h3>
         <h4 className="text-muted-foreground text-sm">{job.location}</h4>
@@ -104,7 +114,7 @@ function Job({ job }: { job: Job }) {
       <div className="col-span-2 space-y-4">
         {job.positions.map((position) => (
           <div key={position.title}>
-            <h4 className="text-base italic">{position.title}</h4>
+            <h4 className="text-sm md:text-base italic">{position.title}</h4>
             <p className="text-xs text-muted-foreground mb-3">
               {position.startDate} - {position.endDate}
             </p>
