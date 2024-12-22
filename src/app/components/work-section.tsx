@@ -21,8 +21,9 @@ const jobs: Job[] = [
       {
         title: "Full-Stack Software Engineer - Team Lead",
         responsibilities: [
+          "TODO: Delivered, from scratch to production, a complete rewrite of the pdk.io web application",
           "TODO: Evaluated the different technologies available to determine the best fit for the pdk.io web application (next.js, tailwind, shadcn/ui, etc.)",
-          "TODO: Work directly with Product to define the user experience for the pdk.io web application",
+          "TODO: Worked directly with Product to define the user experience for the pdk.io web application",
           "TODO: Manage a team of developers, including training developers on the Next.js framework, writing tickets, and reviewing pull requests",
           "TODO: Prep the new product for production and setting up CI/CD pipelines for auto deployments to the various enviornments",
         ],
