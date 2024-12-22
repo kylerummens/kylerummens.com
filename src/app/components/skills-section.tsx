@@ -1,3 +1,3 @@
 export function SkillsSection() {
-  return <div>Skills...</div>;
+  return <div>TODO: Skills...</div>;
 }
