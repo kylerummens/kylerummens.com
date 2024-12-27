@@ -41,9 +41,9 @@ export function HeaderSection() {
       </ul>
 
       <p className="text-muted-foreground text-sm">
-        TODO: As an experienced software engineer with 9 years in the industry,
-        I bring a wealth of knowledge and skills to any development team.
-        Outside work, I pursue my love of adventure through rock climbing and
+        As an experienced software engineer with 10 years in the industry, I
+        bring a wealth of knowledge and skills to any development team. Outside
+        work, I pursue my love of adventure through rock climbing and
         mountaineering, and I am currently working towards my private pilot
         license. Additionally, my faith is an important part of my life, and I
         actively serve in my church community. I am an enthusiastic learner,

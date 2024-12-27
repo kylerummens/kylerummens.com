@@ -8,6 +8,7 @@ export function ProfilePhoto() {
       width={80}
       height={80}
       className="rounded-full overflow-hidden pointer-events-none"
+      priority
     />
   );
 }

@@ -21,11 +21,10 @@ const jobs: Job[] = [
       {
         title: "Full-Stack Software Engineer - Team Lead",
         responsibilities: [
-          "TODO: Delivered, from scratch to production, a complete rewrite of the pdk.io web application",
-          "TODO: Evaluated the different technologies available to determine the best fit for the pdk.io web application (next.js, tailwind, shadcn/ui, etc.)",
-          "TODO: Worked directly with Product to define the user experience for the pdk.io web application",
-          "TODO: Manage a team of developers, including training developers on the Next.js framework, writing tickets, and reviewing pull requests",
-          "TODO: Prep the new product for production and setting up CI/CD pipelines for auto deployments to the various enviornments",
+          "Delivered, from scratch to production, a complete rewrite of the pdk.io web application",
+          "Worked directly with Product team to define the user experience for the pdk.io web application",
+          "Manage a team of software engineers, including training developers on the Next.js framework, writing tickets, and reviewing pull requests",
+          "Prepared the new application for production, including setting up CI/CD pipelines to enable automated deployments across various environments",
         ],
         startDate: "May 2024",
         endDate: "Present",
@@ -33,10 +32,10 @@ const jobs: Job[] = [
       {
         title: "Full-Stack Software Engineer",
         responsibilities: [
-          "TODO: Stripe integration",
-          "TODO: Static IP scripts for managing in-field device connections",
-          "TODO: Maintain customer-facing and internal Node.js Express APIs",
-          "TODO: Maintain the company's main software product, an Angular.js/React web application",
+          "Designed and implemented new features, optimized performance, and resolved issues in the Stripe integration for subscription management for the company's core software product",
+          "Developed and maintained static IP configuration scripts to support in-field device connections",
+          "Maintained and enhanced customer-facing and internal APIs using Node.js and Express",
+          "Supported and updated the company's core software product, an Angular.js/React web application",
         ],
         startDate: "July 2023",
         endDate: "May 2024",
