@@ -6,8 +6,8 @@ import { SkillsSection } from "./components/skills-section";
 
 export default function HomePage() {
   return (
-    <div className="p-8 md:p-20 mx-auto max-w-4xl">
-      <main className="space-y-12">
+    <div className="p-8 md:p-20 print:p-0 mx-auto max-w-4xl">
+      <main className="space-y-12 print:space-y-8">
         <ProfilePhoto />
         <HeaderSection />
         <WorkSection />

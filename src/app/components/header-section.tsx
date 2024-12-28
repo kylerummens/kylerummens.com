@@ -4,9 +4,12 @@ import { EmailButton } from "./email-button";
 export function HeaderSection() {
   return (
     <div>
-      <h1 className="text-3xl mb-4">Kyle Rummens</h1>
+      <h1 className="text-3xl mb-1">Kyle Rummens</h1>
+      <h2 className="text-base text-muted-foreground mb-6">
+        Senior Software Engineer
+      </h2>
 
-      <ul className="flex gap-4 text-sm mb-2">
+      <ul className="flex gap-4 text-sm mb-2 print:hidden">
         <li>
           <Link
             className="link"
@@ -40,7 +43,7 @@ export function HeaderSection() {
         <li className="link">Download</li>
       </ul>
 
-      <p className="text-muted-foreground text-sm">
+      <p className="text-muted-foreground text-sm print:text-xs">
         As an experienced software engineer with 10 years in the industry, I
         bring a wealth of knowledge and skills to any development team. Outside
         work, I pursue my love of adventure through rock climbing and

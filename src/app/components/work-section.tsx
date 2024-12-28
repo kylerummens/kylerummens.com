@@ -3,6 +3,8 @@ import { Section } from "./section";
 type Job = {
   company: string;
   location: string;
+  startDate: string;
+  endDate: string;
   positions: JobPosition[];
 };
 
@@ -17,6 +19,8 @@ const jobs: Job[] = [
   {
     company: "ProdataKey",
     location: "Draper, Utah",
+    startDate: "July 2023",
+    endDate: "Present",
     positions: [
       {
         title: "Full-Stack Software Engineer - Team Lead",
@@ -45,6 +49,8 @@ const jobs: Job[] = [
   {
     company: "BroadbandHub",
     location: "North Salt Lake, Utah",
+    startDate: "July 2019",
+    endDate: "July 2023",
     positions: [
       {
         title: "Software Engineer - Team Lead",
@@ -78,6 +84,8 @@ const jobs: Job[] = [
   {
     company: "Orbit Irrigation Products",
     location: "North Salt Lake, Utah",
+    startDate: "September 2016",
+    endDate: "May 2017",
     positions: [
       {
         title: "Information Technology Intern",
@@ -106,10 +114,13 @@ export function WorkSection() {
 
 function Job({ job }: { job: Job }) {
   return (
-    <div className="flex flex-col md:grid md:grid-cols-3 gap-4 py-4">
+    <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 py-4">
       <div>
         <h3 className="text-base font-medium">{job.company}</h3>
         <h4 className="text-muted-foreground text-sm">{job.location}</h4>
+        <h4 className="text-muted-foreground text-xs">
+          {job.startDate + " - " + job.endDate}
+        </h4>
       </div>
       <div className="col-span-2 space-y-4">
         {job.positions.map((position) => (

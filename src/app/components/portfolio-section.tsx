@@ -30,12 +30,14 @@ const portfolio: PortfolioItem[] = [
 
 export function PortfolioSection() {
   return (
-    <Section title="Portfolio">
+    <Section title="Portfolio" className="print:hidden">
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         {portfolio.map((item) => (
           <div key={item.title} className="py-4 space-y-2">
             <h3 className="text-base italic">{item.title}</h3>
-            <p className="text-sm text-muted-foreground">{item.description}</p>
+            <p className="text-sm print:text-xs text-muted-foreground">
+              {item.description}
+            </p>
           </div>
         ))}
       </div>
