@@ -40,7 +40,16 @@ export function HeaderSection() {
         <li>
           <EmailButton />
         </li>
-        <li className="link">Download</li>
+        <li>
+          <Link
+            className="link"
+            href="/resume.pdf"
+            download="Resume - Kyle Rummens.pdf"
+            target="_blank"
+          >
+            Download
+          </Link>
+        </li>
       </ul>
 
       <div className="hidden print:block text-xs text-muted-foreground -mt-4 mb-4">
