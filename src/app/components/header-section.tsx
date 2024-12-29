@@ -43,6 +43,10 @@ export function HeaderSection() {
         <li className="link">Download</li>
       </ul>
 
+      <div className="hidden print:block text-xs text-muted-foreground -mt-4 mb-4">
+        k.d.rummens@gmail.com | 385.310.6083
+      </div>
+
       <p className="text-muted-foreground text-sm print:text-xs">
         As an experienced software engineer with 10 years in the industry, I
         bring a wealth of knowledge and skills to any development team. Outside
