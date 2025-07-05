@@ -57,7 +57,7 @@ export function HeaderSection() {
       </div>
 
       <p className="text-muted-foreground text-sm print:text-xs">
-        As an experienced software engineer with 10 years in the industry, I
+        As an experienced software engineer with 11 years in the industry, I
         bring a wealth of knowledge and skills to any development team. Outside
         work, I pursue my love of adventure through rock climbing and
         mountaineering, and I am currently working towards my private pilot
