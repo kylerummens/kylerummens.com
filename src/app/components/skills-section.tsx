@@ -6,6 +6,7 @@ export function SkillsSection() {
       <div className="flex flex-wrap gap-4 print:gap-3 text-sm text-muted-foreground">
         <span>JavaScript/TypeScript</span>
         <span>Node.js</span>
+        <span>Bun</span>
         <span>React</span>
         <span>Next.js</span>
         <span>HTML</span>

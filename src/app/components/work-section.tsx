@@ -26,9 +26,11 @@ const jobs: Job[] = [
         title: "Full-Stack Software Engineer - Project Lead",
         responsibilities: [
           "Delivered, from scratch to production, a complete rewrite of the pdk.io web application into React/Next.js",
-          "Worked directly with Product team to define the user experience for the pdk.io web application",
+          "Partnered with Product to define and refine the user experience for the pdk.io web application, aligning technical decisions with customer needs and business goals",
+          "Wrote engineering design documents for new full-stack features within the pdk.io web application",
           "Trained developers on the Next.js framework, wrote tickets, and reviewed pull requests",
           "Prepared the new application for production, including setting up CI/CD pipelines to enable automated deployments across various environments",
+          "Documented repository best practices, code patterns, and contributing guidelines to ensure consistency, clarity, and long term maintainability across the codebase"
         ],
         startDate: "May 2024",
         endDate: "Present",
